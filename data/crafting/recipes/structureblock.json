@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#D#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:ender_eye"
+        },
+
+        "D": {
+            "item": "minecraft:diamond_block"
+        }
+    },
+    "result": {
+        "item": "minecraft:structure_block",
+        "count": 1
+    }
+}

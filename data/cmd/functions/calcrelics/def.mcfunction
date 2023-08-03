@@ -1,0 +1,32 @@
+
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REdef:-1}}]}] run scoreboard players remove @s ARdef 1
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REdef:-1}}]}] run scoreboard players remove @s ARdef 1
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REdef:-1}}]}] run scoreboard players remove @s ARdef 1
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REdef:-1}}]}] run scoreboard players remove @s ARdef 1
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REdef:-1}}]}] run scoreboard players remove @s ARdef 1
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REdef:-1}}]}] run scoreboard players remove @s ARdef 1
+
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REdef:1}}]}] run scoreboard players add @s ARdef 1
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REdef:2}}]}] run scoreboard players add @s ARdef 2
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REdef:3}}]}] run scoreboard players add @s ARdef 3
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REdef:4}}]}] run scoreboard players add @s ARdef 4
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REdef:1}}]}] run scoreboard players add @s ARdef 1
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REdef:2}}]}] run scoreboard players add @s ARdef 2
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REdef:3}}]}] run scoreboard players add @s ARdef 3
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REdef:4}}]}] run scoreboard players add @s ARdef 4
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REdef:1}}]}] run scoreboard players add @s ARdef 1
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REdef:2}}]}] run scoreboard players add @s ARdef 2
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REdef:3}}]}] run scoreboard players add @s ARdef 3
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REdef:4}}]}] run scoreboard players add @s ARdef 4
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REdef:1}}]}] run scoreboard players add @s ARdef 1
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REdef:2}}]}] run scoreboard players add @s ARdef 2
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REdef:3}}]}] run scoreboard players add @s ARdef 3
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REdef:4}}]}] run scoreboard players add @s ARdef 4
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REdef:1}}]}] run scoreboard players add @s ARdef 1
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REdef:2}}]}] run scoreboard players add @s ARdef 2
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REdef:3}}]}] run scoreboard players add @s ARdef 3
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REdef:4}}]}] run scoreboard players add @s ARdef 4
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REdef:1}}]}] run scoreboard players add @s ARdef 1
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REdef:2}}]}] run scoreboard players add @s ARdef 2
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REdef:3}}]}] run scoreboard players add @s ARdef 3
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REdef:4}}]}] run scoreboard players add @s ARdef 4

@@ -1,0 +1,32 @@
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REcr10:1}}]}] run scoreboard players add @s critchance 10
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REcr10:2}}]}] run scoreboard players add @s critchance 20
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REcr10:3}}]}] run scoreboard players add @s critchance 30
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REcr10:4}}]}] run scoreboard players add @s critchance 40
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REcr10:1}}]}] run scoreboard players add @s critchance 10
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REcr10:2}}]}] run scoreboard players add @s critchance 20
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REcr10:3}}]}] run scoreboard players add @s critchance 30
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REcr10:4}}]}] run scoreboard players add @s critchance 40
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REcr10:1}}]}] run scoreboard players add @s critchance 10
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REcr10:2}}]}] run scoreboard players add @s critchance 20
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REcr10:3}}]}] run scoreboard players add @s critchance 30
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REcr10:4}}]}] run scoreboard players add @s critchance 40
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REcr10:1}}]}] run scoreboard players add @s critchance 10
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REcr10:2}}]}] run scoreboard players add @s critchance 20
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REcr10:3}}]}] run scoreboard players add @s critchance 30
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REcr10:4}}]}] run scoreboard players add @s critchance 40
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REcr10:1}}]}] run scoreboard players add @s critchance 10
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REcr10:2}}]}] run scoreboard players add @s critchance 20
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REcr10:3}}]}] run scoreboard players add @s critchance 30
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REcr10:4}}]}] run scoreboard players add @s critchance 40
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REcr10:1}}]}] run scoreboard players add @s critchance 10
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REcr10:2}}]}] run scoreboard players add @s critchance 20
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REcr10:3}}]}] run scoreboard players add @s critchance 30
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REcr10:4}}]}] run scoreboard players add @s critchance 40
+
+
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REcr10:-1}}]}] run scoreboard players remove @s critchance 10
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REcr10:-1}}]}] run scoreboard players remove @s critchance 10
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REcr10:-1}}]}] run scoreboard players remove @s critchance 10
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REcr10:-1}}]}] run scoreboard players remove @s critchance 10
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REcr10:-1}}]}] run scoreboard players remove @s critchance 10
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REcr10:-1}}]}] run scoreboard players remove @s critchance 10

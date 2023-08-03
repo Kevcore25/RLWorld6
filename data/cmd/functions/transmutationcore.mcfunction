@@ -1,0 +1,25 @@
+## # 2: Ice | 27: Water | 29: Electric | 32: Fire | 31: Nature
+
+
+# Flint
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:flint"}},distance=..0.5] run data merge entity @s {Item:{Count:1b,id:"minecraft:bow",tag:{Damage:234,TierBow:1,BowType:1,display:{Name:'[{"text":"Flint Bow","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Enhanced version of the normal bow.","italic":false,"color":"gray"}]']},Enchantments:[{id:"minecraft:power",lvl:1}]}}}
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:flint"}},distance=..0.5] run kill @e[type=item,nbt=!{Item:{tag:{TierBow:1}}},distance=..0.5]
+# Copper
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:copper_ingot"}},distance=..0.5] run data merge entity @s {Item:{Count:1b,id:"minecraft:bow",tag:{Damage:234,TierBow:1,BowType:2,display:{Name:'[{"text":"Copper Bow","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Enhanced version of the normal bow.","italic":false,"color":"gray"}]']},Enchantments:[{id:"minecraft:power",lvl:2},{id:"minecraft:punch",lvl:2}]}}}
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:copper_ingot"}},distance=..0.5] run kill @e[type=item,nbt=!{Item:{tag:{TierBow:1}}},distance=..0.5]
+# Iron
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:iron_ingot"}},distance=..0.5] run data merge entity @s {Item:{Count:1b,id:"minecraft:bow",tag:{Damage:284,TierBow:1,BowType:3,display:{Name:'[{"text":"Iron Bow","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Enhanced version of the normal bow.","italic":false,"color":"gray"}]']},Enchantments:[{id:"minecraft:power",lvl:3}]}}}
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:iron_ingot"}},distance=..0.5] run kill @e[type=item,nbt=!{Item:{tag:{TierBow:1}}},distance=..0.5]
+# Gold
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:gold_ingot"}},distance=..0.5] run data merge entity @s {Item:{Count:1b,id:"minecraft:bow",tag:{Damage:320,TierBow:1,BowType:4,display:{Name:'[{"text":"Golden Bow","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Enhanced version of the normal bow.","italic":false,"color":"gray"}]']},Enchantments:[{id:"minecraft:power",lvl:1},{id:"minecraft:punch",lvl:3}]}}}
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:gold_ingot"}},distance=..0.5] run kill @e[type=item,nbt=!{Item:{tag:{TierBow:1}}},distance=..0.5]
+# Diamond
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:diamond"}},distance=..0.5] run data merge entity @s {Item:{Count:1b,id:"minecraft:bow",tag:{Damage:134,TierBow:1,BowType:5,display:{Name:'[{"text":"Diamond Bow","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Enhanced version of the normal bow.","italic":false,"color":"gray"}]']},Enchantments:[{id:"minecraft:power",lvl:4},{id:"minecraft:punch",lvl:1}]}}}
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:diamond"}},distance=..0.5] run kill @e[type=item,nbt=!{Item:{tag:{TierBow:1}}},distance=..0.5]
+# Netherite
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:netherite_ingot"}},distance=..0.5] run data merge entity @s {Item:{Count:1b,id:"minecraft:bow",tag:{Damage:84,TierBow:1,BowType:6,display:{Name:'[{"text":"Netherite Bow","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Enhanced version of the normal bow.","italic":false,"color":"gray"}]']},Enchantments:[{id:"minecraft:power",lvl:5}]}}}
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:bow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:netherite_ingot"}},distance=..0.5] run kill @e[type=item,nbt=!{Item:{tag:{TierBow:1}}},distance=..0.5]
+
+# Shulker Shell
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:lapis_lazuli",tag:{Sapphire:1},Count:9b}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:golden_helmet"}},distance=..0.5] run data merge entity @s {Item:{Count:1b,id:"minecraft:shulker_shell",tag:{ShulkerShell:1,display:{Name:'[{"text":"Shulker Shell","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Can be crafted into a shulker box","italic":false,"color":"gray"}]']}}}}
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:shulker_shell"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:golden_helmet"}},distance=..0.5] run kill @e[type=item,nbt=!{Item:{tag:{ShulkerShell:1}}},distance=..0.5]

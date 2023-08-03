@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#D#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:chain"
+        },
+
+        "D": {
+            "item": "minecraft:structure_block"
+        }
+    },
+    "result": {
+        "item": "minecraft:spawner",
+        "count": 1
+    }
+}

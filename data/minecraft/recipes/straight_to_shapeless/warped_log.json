@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:twisting_vines"
+        },
+        {
+            "item": "minecraft:stripped_warped_stem"
+        }
+    ],
+    "result": {
+        "item": "minecraft:warped_stem",
+        "count": 1
+    },
+    "group": "straight_to_shapeless"
+}

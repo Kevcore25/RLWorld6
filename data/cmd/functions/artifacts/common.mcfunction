@@ -1,0 +1,8 @@
+scoreboard players operation @s myrandom = @e[type=armor_stand,tag=randomGen,limit=1,sort=random] tempRandomgen
+
+
+execute if entity @s[scores={myrandom=1..3}] run summon item ~ ~ ~ {Item:{id:"minecraft:pink_tulip",Count:1b,tag:{ART-Healer:1,display:{Name:'[{"text":"[ARTIFACT] ","italic":false},{"text":"Healer","color":"gray"}]',Lore:['[{"text":"When taking DMG: If over 1 DMG was taken, 30% to apply","italic":false,"color":"gray"}]','[{"text":"Regeneration III for 1s (restores 1 health). This effect","italic":false,"color":"gray"}]','[{"text":"cannot apply when having Shields.","italic":false,"color":"gray"}]']}}}}
+
+execute if entity @s[scores={myrandom=4..6}] run summon item ~ ~ ~ {Item:{id:"minecraft:red_tulip",Count:1b,tag:{ART-Attacker:1,display:{Name:'[{"text":"[ARTIFACT] ","italic":false},{"text":"Attacker","color":"gray"}]',Lore:['[{"text":"Increases Critical Chance by 36%. If the user already has","italic":false,"color":"gray"}]','[{"text":"above 100% Critical Chance, this effect receives a","italic":false,"color":"gray"}]','[{"text":"1.5x bonus.","italic":false,"color":"gray"}]']}}}}
+ 
+execute if entity @s[scores={myrandom=7..9}] run summon item ~ ~ ~ {Item:{id:"minecraft:white_tulip",Count:1b,tag:{ART-Defender:1,display:{Name:'[{"text":"[ARTIFACT] ","italic":false},{"text":"Defender","color":"gray"}]',Lore:['[{"text":"Increases DEF by 1, and Debuff RES by 30%","italic":false,"color":"gray"}]']}}}}

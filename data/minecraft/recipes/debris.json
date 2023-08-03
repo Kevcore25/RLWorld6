@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+      "item": "minecraft:structure_block"
+    },
+    "result": "minecraft:ancient_debris",
+    "count": 2
+  }

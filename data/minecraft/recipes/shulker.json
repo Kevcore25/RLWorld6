@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:smithing",
+    "base": {
+        "item": "minecraft:bundle"
+    },
+    "addition": {
+        "item": "minecraft:blaze_rod"
+    },
+    "result": {
+        "item": "minecraft:gray_shulker_box"
+    }
+}

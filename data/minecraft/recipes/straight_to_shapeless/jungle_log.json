@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:jungle_slab"
+        },
+        {
+            "item": "minecraft:stripped_jungle_log"
+        }
+    ],
+    "result": {
+        "item": "minecraft:jungle_log",
+        "count": 1
+    },
+    "group": "straight_to_shapeless"
+}

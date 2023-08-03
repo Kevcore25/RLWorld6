@@ -1,0 +1,32 @@
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REatk:1}}]}] run scoreboard players add @s ARatk 1
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REatk:2}}]}] run scoreboard players add @s ARatk 2
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REatk:3}}]}] run scoreboard players add @s ARatk 3
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REatk:4}}]}] run scoreboard players add @s ARatk 4
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REatk:1}}]}] run scoreboard players add @s ARatk 1
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REatk:2}}]}] run scoreboard players add @s ARatk 2
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REatk:3}}]}] run scoreboard players add @s ARatk 3
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REatk:4}}]}] run scoreboard players add @s ARatk 4
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REatk:1}}]}] run scoreboard players add @s ARatk 1
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REatk:2}}]}] run scoreboard players add @s ARatk 2
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REatk:3}}]}] run scoreboard players add @s ARatk 3
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REatk:4}}]}] run scoreboard players add @s ARatk 4
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REatk:1}}]}] run scoreboard players add @s ARatk 1
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REatk:2}}]}] run scoreboard players add @s ARatk 2
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REatk:3}}]}] run scoreboard players add @s ARatk 3
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REatk:4}}]}] run scoreboard players add @s ARatk 4
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REatk:1}}]}] run scoreboard players add @s ARatk 1
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REatk:2}}]}] run scoreboard players add @s ARatk 2
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REatk:3}}]}] run scoreboard players add @s ARatk 3
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REatk:4}}]}] run scoreboard players add @s ARatk 4
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REatk:1}}]}] run scoreboard players add @s ARatk 1
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REatk:2}}]}] run scoreboard players add @s ARatk 2
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REatk:3}}]}] run scoreboard players add @s ARatk 3
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REatk:4}}]}] run scoreboard players add @s ARatk 4
+
+
+execute if entity @s[nbt={Inventory:[{Slot:9b,tag:{REatk:-1}}]}] run scoreboard players remove @s ARatk 1
+execute if entity @s[nbt={Inventory:[{Slot:10b,tag:{REatk:-1}}]}] run scoreboard players remove @s ARatk 1
+execute if entity @s[nbt={Inventory:[{Slot:18b,tag:{REatk:-1}}]}] run scoreboard players remove @s ARatk 1
+execute if entity @s[nbt={Inventory:[{Slot:19b,tag:{REatk:-1}}]}] run scoreboard players remove @s ARatk 1
+execute if entity @s[nbt={Inventory:[{Slot:27b,tag:{REatk:-1}}]}] run scoreboard players remove @s ARatk 1
+execute if entity @s[nbt={Inventory:[{Slot:28b,tag:{REatk:-1}}]}] run scoreboard players remove @s ARatk 1

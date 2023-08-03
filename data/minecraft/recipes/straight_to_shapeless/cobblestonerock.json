@@ -1,0 +1,22 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:firework_star"
+        },
+        {
+            "item": "minecraft:firework_star"
+        },
+        {
+            "item": "minecraft:firework_star"
+        },
+        {
+            "item": "minecraft:firework_star"
+        }
+    ],
+    "result": {
+        "item": "minecraft:cobblestone",
+        "count": 1
+    },
+    "group": "straight_to_shapeless"
+}

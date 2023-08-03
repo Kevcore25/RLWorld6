@@ -1,0 +1,13 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:blaze_powder"
+        }
+    ],
+    "result": {
+        "item": "minecraft:redstone",
+        "count": 1
+    },
+    "group": "straight_to_shapeless"
+}

@@ -1,0 +1,171 @@
+
+schedule function cmd:2tick 2t replace
+# tellraw @a[tag=debuger] {"text":"2tick.mcfunction ran","color":"gray"}
+
+## Reset STATUSID
+
+# NOTICE: Uncomment the line below to enable status ID reset within active range of players. This may cause more lag!
+# execute at @a[tag=!spectating] run scoreboard players set @e[distance=..24] currentStatus 0
+scoreboard players set @a currentStatus 0
+
+# elemetns
+# Alternative Elements. Removes distance=..24, which may actually improve lag
+# execute if score Entities serverstats matches ..300 run function cmd:altelements
+# execute if score Entities serverstats matches 300.. run function cmd:elements
+function cmd:elements
+execute as @a[nbt={FallFlying:1b},scores={tempElytra=1..},gamemode=!creative] run scoreboard players remove @s tempElytra 1
+execute as @a[nbt={FallFlying:1b},scores={tempElytra=1..},gamemode=!creative] run scoreboard players set @s tempElytra. 30
+# time add 1t
+
+## REACTIONTEXT (Legacy)
+tp @e[type=armor_stand, tag=ReactionText, scores={ temp = 10.. }] 0 0 0
+kill @e[type=armor_stand, tag=ReactionText, scores={ temp = 10.. }]
+execute as @e[type=armor_stand,tag=ReactionText] run scoreboard players add @s temp 2
+execute as @e[type=armor_stand,tag=ReactionText] at @s run tp @s ~ ~0.15 ~ 
+
+
+## Replace ores
+execute at @a run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 gold_ore replace #redstone_ores
+execute at @a run fill ~8 ~8 ~8 ~-8 ~-8 ~-8 stone_button[face=floor,powered=false] replace grass
+
+
+## No stamina
+execute as @a[tag=!spectating] if entity @s[scores={stamina=..0}] run attribute @s generic.attack_damage base set -1024
+execute as @a[tag=!spectating] if entity @s[scores={stamina=..0}] run effect give @s[tag=!BedrockUser] mining_fatigue 1 7 true
+
+## Turn items into others
+execute at @a[tag=!spectating] as @e[type=item,distance=..8,nbt={Item:{id:"minecraft:spider_eye"}}] at @s run data merge entity @s {Item:{id:"minecraft:golden_apple"}}
+execute at @a[tag=!spectating] as @e[type=item,distance=..8,nbt={Item:{id:"minecraft:raw_gold"}}] at @s run data merge entity @s {Item:{id:"minecraft:gold_ingot"}}
+execute at @a[tag=!spectating] as @e[type=item,distance=..8,nbt={Item:{id:"minecraft:shulker_shell"}}] at @s[nbt=!{Item:{tag:{ShulkerShell:1}}}] run summon item ~ ~ ~ {Invulnerable:1b,CustomName:'{"text":"Shield","color":"yellow"}',Item:{id:"minecraft:raw_gold_block",Count:1b,tag:{Shield:1}}}
+execute at @a[tag=!spectating] as @e[type=item,distance=..8,nbt={Item:{id:"minecraft:shulker_shell"}}] at @s[nbt=!{Item:{tag:{ShulkerShell:1}}}] run data merge entity @s {Item:{id:"minecraft:tipped_arrow",Count:1b,tag:{display:{Name:'[{"text":"Electric Arrow","italic":false,"color":"green"}]',Lore:['[{"text":"Applies Electric on hit. Not transmutable!","italic":false,"color":"gray"}]']},CustomPotionEffects:[{ShowParticles:1b,Id:29,Duration:60,ShowIcon:1b,Amplifier:1b,Ambient:0b}],HideFlags:32,CustomPotionColor:16776960,Potion:"minecraft:empty"}}}
+execute at @a[tag=!spectating] as @e[type=item,distance=..8,nbt={Item:{id:"minecraft:bucket"}}] at @s if block ~ ~ ~ snow run data merge entity @s {Item:{id:"minecraft:powder_snow_bucket"}}
+
+execute at @a as @e[distance=..24,scores={burning=1..}] at @s unless entity @s[nbt={Fire:-20s}] unless entity @s[nbt={Fire:0s}] unless block ~ ~ ~ water run damage @s 1 on_fire by @p
+scoreboard players remove @e[scores={charredTime=1..}] charredTime 1
+execute at @a as @e[distance=..24,scores={charredTime=1..}] at @s run particle dust 0 0 0 1 ~ ~0.5 ~ 0.3 0.5 0.3 0 40
+
+execute as @a[nbt={ActiveEffects:[{Id:25}]}] at @s[nbt={ActiveEffects:[{Id:9}]}] run function cmd:reactions/blast
+
+execute as @a[scores={FNCD=1..}] run scoreboard players remove @s FNCD 1
+
+effect give @a[nbt={ActiveEffects:[{Id:25}]}] conduit_power 8 0 true
+
+
+effect clear @a levitation
+
+# EFFECTS
+effect clear @e[tag=clearFire] hero_of_the_village
+effect clear @e[tag=clearIce] slowness
+effect clear @e[tag=clearWater] unluck
+effect clear @e[tag=clearElectric] conduit_power
+effect clear @e[tag=clearNature] bad_omen
+
+#tp @e[type=villager,tag=RMBdetection] 0 0 0
+
+# # 2: Ice | 27: Water | 29: Electric | 32: Fire | 31: Nature
+
+
+
+scoreboard players remove @e[scores={burning=1..}] burning 1
+
+execute as @a[nbt={ActiveEffects:[{Id:2}]}] at @s[nbt={ActiveEffects:[{Id:27}]}] run function cmd:reactions/freeze
+
+
+execute as @a run function cmd:slrequirement
+
+execute at @a run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace anvil
+
+
+execute at @a[tag=!spectating] as @e[distance=..24,scores={noAITime=1..}] run effect clear @s unluck
+
+execute as @a at @s if block ~ ~ ~ fire run effect give @s hero_of_the_village 6 0 true
+execute as @a at @s if block ~ ~ ~ lava run effect give @s hero_of_the_village 8 0 true
+execute as @a at @s if block ~ ~ ~ powder_snow run effect give @s slowness 6 0 true
+execute as @a at @s if block ~ ~1 ~ powder_snow run effect give @s slowness 4 0 true
+execute as @a at @s if block ~ ~1 ~ water run effect give @s unluck 4 0 true
+execute as @a at @s if block ~ ~ ~ water run effect give @s unluck 6 0 true
+execute as @a at @s if block ~ ~ ~ #piglin_repellents run effect give @s conduit_power 12 0 true
+
+execute as @a[nbt={ActiveEffects:[{Id:2}]}] at @s[nbt={ActiveEffects:[{Id:27}]}] run function cmd:reactions/freeze
+
+
+# PICK
+execute at @a[tag=!spectating] as @e[distance=..7,type=item,nbt=!{Item:{tag:{Shield:1}}}] run data merge entity @s[tag=!nopickupdelay] {PickupDelay:100s}
+
+execute at @a[tag=!spectating] as @e[type=interaction,distance=..7] at @s on target run data merge entity @e[type=item,distance=..1,limit=1,sort=nearest] {PickupDelay:0s}
+execute at @a[tag=!spectating] as @e[type=interaction,distance=..7] at @s on target run tp @e[type=item,distance=..1,limit=1,sort=nearest] @p[distance=..7]
+
+
+execute at @a[tag=!spectating] as @e[type=interaction,distance=..8] unless entity @e[type=item,distance=..0.5] run kill @s 
+execute at @a[tag=!spectating] at @e[type=item,distance=..7] unless entity @e[type=interaction,distance=..0.5] run summon interaction ~ ~-0.1 ~ {width:0.4f,height:0.5f}
+
+execute at @a[tag=cf] run fill ~ ~ ~ ~ ~ ~ air replace water
+tag @a remove cf
+
+execute as @a[tag=!spectating] if entity @s[scores={stamina=..0}] at @s if block ~ ~-1 ~ water if block ~ ~ ~ water run tp @s ~ ~-0.2 ~
+execute as @a[tag=!spectating] if entity @s[scores={stamina=..0}] at @s if block ~ ~ ~ water if block ~ ~1 ~ water run tp @s ~ ~-0.2 ~
+
+
+
+execute as @a[nbt={SelectedItem:{tag:{AoECrossbow:1}}}] unless entity @s[nbt={SelectedItem:{tag:{ChargedProjectiles: [{id: "minecraft:firework_rocket", Count: 26b, tag: {Fireworks: {Flight: 1b, Explosions: [{Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}]}}}]}}}] if entity @s[nbt={SelectedItem:{tag:{Charged:1b}}}] run item replace entity @s weapon.mainhand with crossbow{AoECrossbow:1,HideFlags:97,display:{Name:'[{"text":"[EVENT] ","italic":false,"color":"light_purple"},{"text":"P","italic":false,"color":"red"},{"text":"r","color":"yellow"},{"text":"i","color":"green"},{"text":"d","color":"aqua"},{"text":"e","color":"light_purple"},{"text":" Month\'s Weapon","color":"light_purple"}]',Lore:['[{"text":"To celebrate Pride Month!","italic":true,"color":"dark_purple"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Shoots an explosive AoE rocket.","italic":false,"color":"gray"}]','[{"text":"Recharges when an arrow is loaded.","italic":false,"color":"gray"}]','[{"text":"Effective against Pillagers","italic":false,"color":"gray"}]']},Enchantments: [{id: "minecraft:multishot", lvl: 1}], Charged: 1b, Damage: 0, ChargedProjectiles: [{id: "minecraft:firework_rocket", Count: 26b, tag: {Fireworks: {Flight: 1b, Explosions: [{Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}, {Type: 0b, Colors: [I; 11743532, 15435844, 14602026, 4312372, 6719955, 2437522, 8073150, 14188952]}]}}}]}
+
+## temperatuer
+
+# restoring calc
+
+# For bedrock clients, as well as preventing offhand
+execute as @a unless entity @s[nbt={Inventory:[{Slot:-106b,tag:{RMBDetector:1}}]}] if entity @s[tag=BedrockUser,nbt={SelectedItem:{tag:{RMBDetector:1}}}] at @s run function cmd:rmbdetection
+execute as @a unless entity @s[nbt={Inventory:[{Slot:-106b,tag:{RMBDetector:1}}]}] if entity @s[nbt={SelectedItem:{tag:{RMBDetector:1}}}] run item replace entity @s weapon.mainhand from entity @s weapon.offhand
+execute as @a run item replace entity @s weapon.offhand with carrot_on_a_stick{RMBDetector:1,ItemDetector:1,BlockDetector:1,display:{Name:'[{"text":"RMB Detector","italic":false}]',Lore:['[{"text":"A Blocks and Item detector combined into one.","italic":false,"color":"gray"}]','[{"text":"Put in the off-hand to use.","italic":false,"color":"gray"}]']}} 1
+
+execute as @a[scores={gatheringLvl=4..}] at @s store result score @s rocktemp run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 stone_button[powered=true,face=floor,facing=south] replace stone_button[powered=true,face=floor,facing=north] 
+execute as @a[scores={gatheringLvl=4..,rocktemp=1..}] at @s run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace stone_button[powered=true,face=floor,facing=south] 
+execute as @a[scores={gatheringLvl=4..,rocktemp=1..},nbt={SelectedItem:{}}] at @s run give @s firework_star{Rock:1,display:{Name:'[{"text":"Rock","italic": false}]'}} 2
+execute as @a[scores={gatheringLvl=4..,rocktemp=1..},nbt=!{SelectedItem:{}}] at @s run item replace entity @s weapon.mainhand with firework_star{Rock:1,display:{Name:'[{"text":"Rock","italic": false}]'}} 2
+execute as @a[scores={gatheringLvl=4..,rocktemp=1..}] at @s run scoreboard players set @s rocktemp 0
+
+# physcicals
+
+execute at @a run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace enchanting_table
+execute at @a[tag=!spectating] as @e[distance=..24,scores={bleedtime=1..}] run scoreboard players remove @s bleedtime 1 
+
+execute at @a[tag=!spectating] as @e[distance=..24,scores={bleedtime=41}] at @s run function cmd:bleed
+execute at @a[tag=!spectating] as @e[distance=..24,scores={bleedtime=21}] at @s run function cmd:bleed
+execute at @a[tag=!spectating] as @e[distance=..24,scores={bleedtime=1}] at @s run function cmd:bleed
+
+
+
+execute at @a[tag=!spectating] as @e[distance=..24,scores={staggeredtime=1..}] run scoreboard players remove @s staggeredtime 1 
+execute at @a[tag=!spectating] as @e[distance=..24,scores={puncturedtime=1..}] run scoreboard players remove @s puncturedtime 1 
+
+execute at @a[tag=!spectating] as @e[type=!player,distance=..24,scores={puncturedtime=0}] run attribute @s generic.armor base set -5
+execute at @a[tag=!spectating] as @e[type=!player,distance=..24,scores={puncturedtime=0}] run attribute @s generic.armor_toughness base set -5
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:ancient_debris"}}] run data merge entity @s {Item:{id:"minecraft:netherite_scrap",Count:4}}
+
+tellraw @a[scores={electricInfusion=1}] {"text": "Your Electric infusion has ended","color": "aqua"}
+scoreboard players remove @a[scores={electricInfusion=1..}] electricInfusion 1
+tellraw @a[scores={fireInfusion=1}] {"text": "Your Fire infusion has ended","color": "aqua"}
+scoreboard players remove @a[scores={fireInfusion=1..}] fireInfusion 1
+
+
+## Enchantments
+enchant @a[nbt=!{SelectedItem:{tag:{NoEnch:1}}},scores={gatheringLvl=10..}] efficiency 5
+enchant @a[nbt=!{SelectedItem:{tag:{NoEnch:1}}},scores={gatheringLvl=5..9}] efficiency 3
+enchant @a[nbt=!{SelectedItem:{tag:{NoEnch:1}}},scores={gatheringLvl=..4}] efficiency 1
+enchant @a[nbt=!{SelectedItem:{tag:{NoEnch:1}}},scores={gatheringLvl=..4}] efficiency 1
+enchant @a[nbt=!{SelectedItem:{tag:{NoEnch:1}}}] fortune 3
+enchant @a[nbt=!{SelectedItem:{tag:{NoEnch:1}}}] sweeping 2
+enchant @a[nbt=!{SelectedItem:{tag:{NoEnch:1}}}] looting 3
+enchant @a[nbt=!{SelectedItem:{tag:{NoEnch:1}}}] quick_charge 2
+enchant @a[nbt=!{SelectedItem:{tag:{NoEnch:1}}}] piercing 1
+
+
+clear @a lever
+clear @a redstone_block
+clear @a redstone_torch
+
+
+scoreboard players enable @a challenges
+execute as @a unless entity @s[scores={challenges=0}] run function cmd:cmd/challenges
+scoreboard players set @a challenges 0

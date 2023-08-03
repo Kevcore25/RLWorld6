@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#A#",
+        "#B#",
+        "# #"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:structure_block"
+        },
+        "B": {
+            "item": "minecraft:netherite_block"
+        },
+
+        "A": {
+            "item": "minecraft:phantom_membrane"
+        }
+    },
+    "result": {
+        "item": "minecraft:elytra",
+        "count": 1
+    }
+}

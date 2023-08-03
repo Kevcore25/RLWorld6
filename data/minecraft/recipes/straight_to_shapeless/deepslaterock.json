@@ -1,0 +1,22 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:gray_dye"
+        },
+        {
+            "item": "minecraft:gray_dye"
+        },
+        {
+            "item": "minecraft:gray_dye"
+        },
+        {
+            "item": "minecraft:gray_dye"
+        }
+    ],
+    "result": {
+        "item": "minecraft:cobbled_deepslate",
+        "count": 1
+    },
+    "group": "straight_to_shapeless"
+}

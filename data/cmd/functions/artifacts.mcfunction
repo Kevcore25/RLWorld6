@@ -1,0 +1,2 @@
+
+# {ART-BloomMaster:1,display:{Name:'[{"text":"[ARTIFACT] ","italic":false},{"text":"Plant Commander","color":"aqua"}]',Lore:['[{"text":"Blooms triggered within 7m of the player will explode","italic":false,"color":"gray"}]','[{"text":"faster than usual, exploding after 1s. Additionally, ICD","italic":false,"color":"gray"}]','[{"text":"of bloom for the entity is reduced by 0.2s.","italic":false,"color":"gray"}]']}} 1

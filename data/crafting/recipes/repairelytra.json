@@ -1,0 +1,21 @@
+                            {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "#D#",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:structure_block"
+        },
+
+        "D": {
+            "item": "minecraft:elytra"
+        }
+    },
+    "result": {
+        "item": "minecraft:elytra",
+        "count": 1
+    }
+}

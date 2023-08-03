@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:blaze_rod"
+        },
+        {
+            "item": "minecraft:iron_nugget"
+        }
+    ],
+    "result": {
+        "item": "minecraft:redstone",
+        "count": 4
+    },
+    "group": "straight_to_shapeless"
+}

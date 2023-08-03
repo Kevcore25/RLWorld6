@@ -1,0 +1,21 @@
+
+execute if entity @s[scores={mobhptemp=61}] run data merge entity @s {CustomName:'{"text":"❤ 61%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=62}] run data merge entity @s {CustomName:'{"text":"❤ 62%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=63}] run data merge entity @s {CustomName:'{"text":"❤ 63%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=64}] run data merge entity @s {CustomName:'{"text":"❤ 64%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=65}] run data merge entity @s {CustomName:'{"text":"❤ 65%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=66}] run data merge entity @s {CustomName:'{"text":"❤ 66%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=67}] run data merge entity @s {CustomName:'{"text":"❤ 67%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=68}] run data merge entity @s {CustomName:'{"text":"❤ 68%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=69}] run data merge entity @s {CustomName:'{"text":"❤ 69%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=70}] run data merge entity @s {CustomName:'{"text":"❤ 70%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=71}] run data merge entity @s {CustomName:'{"text":"❤ 71%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=72}] run data merge entity @s {CustomName:'{"text":"❤ 72%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=73}] run data merge entity @s {CustomName:'{"text":"❤ 73%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=74}] run data merge entity @s {CustomName:'{"text":"❤ 74%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=75}] run data merge entity @s {CustomName:'{"text":"❤ 75%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=76}] run data merge entity @s {CustomName:'{"text":"❤ 76%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=77}] run data merge entity @s {CustomName:'{"text":"❤ 77%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=78}] run data merge entity @s {CustomName:'{"text":"❤ 78%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=79}] run data merge entity @s {CustomName:'{"text":"❤ 79%","color":"red"}'}
+execute if entity @s[scores={mobhptemp=80}] run data merge entity @s {CustomName:'{"text":"❤ 80%","color":"red"}'}

@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stripped_crimson_stem"
+        },
+        {
+            "item": "minecraft:weeping_vines"
+        }
+    ],
+    "result": {
+        "item": "minecraft:crimson_stem",
+        "count": 1
+    },
+    "group": "straight_to_shapeless"
+}

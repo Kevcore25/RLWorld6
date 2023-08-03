@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:apple"
+        },
+        {
+            "item": "minecraft:gold_ingot"
+        }
+    ],
+    "result": {
+        "item": "minecraft:golden_apple",
+        "count": 1
+    },
+    "group": "straight_to_shapeless"
+}

@@ -1,0 +1,22 @@
+execute if entity @s[scores={doDmg=205..209}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"20.5","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=210..214}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"21","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=215..219}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"21.5","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=220..224}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"22","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=225..229}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"22.5","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=230..234}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"23","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=235..239}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"23.5","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=240..244}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"24","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=245..249}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"24.5","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=250..254}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"25","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=255..259}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"25.5","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=260..264}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"26","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=265..269}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"26.5","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=270..274}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"27","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=275..279}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"27.5","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=280..284}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"28","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=285..289}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"28.5","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=290..294}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"29","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=295..299}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"29.5","color":"#FF0000"}',Tags:[ReactionText]}
+execute if entity @s[scores={doDmg=300..304}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"30","color":"#FF0000"}',Tags:[ReactionText]}
+
+execute if entity @s[scores={doDmg=305..}] run summon armor_stand ~ ~ ~ {CustomNameVisible:1b,Marker:1b,Invisible:1b,CustomName:'{"text":"30+","color":"#FF1100"}',Tags:[ReactionText]}
