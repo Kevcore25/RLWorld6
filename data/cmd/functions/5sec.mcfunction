@@ -8,6 +8,8 @@ scoreboard objectives remove serverStats
 scoreboard objectives add serverStats dummy [{"text":"RL","color":"green"},{"text":"World","color":"dark_green"},{"text":" Debug Stats","color":"dark_aqua"}]
 scoreboard objectives setdisplay sidebar serverStats
 
+execute at @a if biome ~ ~ ~ #is_forest run playsound minecraft:entity.parrot.ambient ambient @a ~ ~ ~ 1 0
+
 #tag @r add CLtemp
 team add SS
 team modify SS suffix ": "

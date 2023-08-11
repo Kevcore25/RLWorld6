@@ -131,7 +131,7 @@ execute if score amount challenges matches 0 as @a if score @s tpa.pid = user ch
 
 
 execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 run xp add @s 60 levels
-execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 run trigger skills set 6
+execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 run execute in the_end run tp @s 1000 100 1000
 execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 run scoreboard players set @s temperature 0
 execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 run effect give @s instant_health 1 15
 # REWARDS
@@ -146,6 +146,13 @@ execute if score amount challenges matches 0 as @a if score @s tpa.pid = user ch
 execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 if score reward challenges matches 3 at @s run give @s iron_horse_armor{GetRelic:1}
 execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 if score reward challenges matches 3 at @s run give @s golden_horse_armor{GetRelic:1}
 execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 if score reward challenges matches 3 if entity @s[scores={myrandom=0..2}] at @s run give @s diamond_horse_armor{GetRelic:1}
+
+
+
+execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 if score reward challenges matches 4 if entity @s at @s run give @s golden_horse_armor{GetRelic:1}
+execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 if score reward challenges matches 4 if entity @s at @s run give @s diamond_horse_armor{GetRelic:1}
+
+execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 if score reward challenges matches 4 if entity @s[scores={myrandom=9}] at @s run give @s gunpowder{RelicEnhancer:1,display:{Name:'[{"text":"Relic Enhancer","italic":false,"color":"gold","bold":true}]',Lore:['[{"text":"When thrown together with a relic, the relic","italic":false,"color":"gray"}]','[{"text":"receives 1 random stat.","italic":false,"color":"gray"}]','[{"text":"If the relic already has more than 4 of the random","italic":false,"color":"gray"}]','[{"text":"stat, the relic gains +1 SP Regeneration","italic":false,"color":"gray"}]']},Enchantments:[{id:"minecraft:power",lvl:1}],HideFlags:1} 1
 
 # end of reards
 execute if score amount challenges matches 0 as @a if score @s tpa.pid = user challenges if score started challenges matches 1 run scoreboard players set started challenges 0

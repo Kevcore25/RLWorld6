@@ -1,7 +1,13 @@
 
 tellraw @s {"text": "Restoring 2 hearts (♥♥)","color": "green"}
 #effect give @s instant_health 1 0 true
-effect give @s minecraft:regeneration 6 1
+tellraw @s[scores={firstaidLvl=0}] {"text": "You need a First Aid skill level of at least 1 to receive healing from bandages!","color": "red"}
+effect give @s[scores={firstaidLvl=1}] minecraft:regeneration 2 1
+effect give @s[scores={firstaidLvl=2}] minecraft:regeneration 3 1
+effect give @s[scores={firstaidLvl=3..}] minecraft:regeneration 6 1
+
+scoreboard players add @s[scores={firstaidLvl=6..,shields=1..}] shields 8
+scoreboard players add @s[scores={firstaidLvl=6..}] shields 2
 
 advancement revoke @s only bandage:aone
 advancement revoke @s only bandage:atwo

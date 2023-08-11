@@ -18,23 +18,23 @@ execute if entity @p[scores={ARem=8..},distance=..7] run scoreboard players set 
 
 
 tellraw @s[scores={reactionICD=..0}] {"text": "Debuff: Freeze","color": "red"}
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=0,reactionICD=..0,ARemres=0}] run scoreboard players set @s noAITime 40
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=0,reactionICD=..0,ARemres=1}] run scoreboard players set @s noAITime 36
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=0,reactionICD=..0,ARemres=2}] run scoreboard players set @s noAITime 32
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=0,reactionICD=..0,ARemres=3}] run scoreboard players set @s noAITime 28
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=0,reactionICD=..0,ARemres=4}] run scoreboard players set @s noAITime 24
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=0,reactionICD=..0,ARemres=5}] run scoreboard players set @s noAITime 20
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=0,reactionICD=..0,ARemres=6}] run scoreboard players set @s noAITime 16
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=0,reactionICD=..0,ARemres=7}] run scoreboard players set @s noAITime 12
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=0,reactionICD=..0,ARemres=8..}] run scoreboard players set @s noAITime 8
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=0,reactionICD=..0}] run effect give @s slowness 1 0 true
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=0,reactionICD=..0}] run scoreboard players set @s reactionICD 21
+execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={reactionICD=..0,ARemres=0}] run scoreboard players set @s noAITime 40
+execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={reactionICD=..0,ARemres=1}] run scoreboard players set @s noAITime 36
+execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={reactionICD=..0,ARemres=2}] run scoreboard players set @s noAITime 32
+execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={reactionICD=..0,ARemres=3}] run scoreboard players set @s noAITime 28
+execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={reactionICD=..0,ARemres=4}] run scoreboard players set @s noAITime 24
+execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={reactionICD=..0,ARemres=5}] run scoreboard players set @s noAITime 20
+execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={reactionICD=..0,ARemres=6}] run scoreboard players set @s noAITime 16
+execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={reactionICD=..0,ARemres=7}] run scoreboard players set @s noAITime 12
+execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={reactionICD=..0,ARemres=8..}] run scoreboard players set @s noAITime 8
+execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={reactionICD=..0}] run effect give @s slowness 1 0 true
+execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={reactionICD=..0}] run scoreboard players set @s reactionICD 21
 
 
 
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=1..,reactionICD=..0}] run scoreboard players remove @s shields 20
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=1..,reactionICD=..0}] run scoreboard players set @s reactionICD 20
-execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=1..,reactionICD=..0}] run effect clear @s unluck
+# execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=1..,reactionICD=..0}] run scoreboard players remove @s shields 20
+# execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=1..,reactionICD=..0}] run scoreboard players set @s reactionICD 20
+# execute if entity @s[type=player,nbt={ActiveEffects:[{Id:27},{Id:2}]},scores={shields=1..,reactionICD=..0}] run effect clear @s unluck
 summon text_display ~ ~1.15 ~ {billboard:"center",see_through:1b,Tags:["ReactionText"],text:'{"text":"Freeze","color":"#00FFFF","bold":true,"italic":false}',background:268435456}
 
 

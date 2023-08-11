@@ -13,45 +13,45 @@
 # execute as @e[type=dragon_fireball,tag=!stop] store result entity @s power[2] double 0.1 run data get entity @s power[2] 300
 
 ## FIRE BREATH
-execute at @e[type=dragon_fireball] run execute as @e[distance=..3,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!dragon_fireball] if entity @s[type=!ender_dragon] if entity @s[type=!text_display] if entity @s[type=!area_effect_cloud] run function cmd:reactions/burning
+#execute at @e[type=dragon_fireball] run execute as @e[distance=..3,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!dragon_fireball] if entity @s[type=!ender_dragon] if entity @s[type=!text_display] if entity @s[type=!area_effect_cloud] run function cmd:reactions/burning
 
-execute at @e[type=dragon_fireball] run particle minecraft:dust 1 0.6 0 1000 ~ ~ ~ 1 1 1 0.1 10
-execute at @e[type=dragon_fireball] run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 fire keep
-execute at @e[type=dragon_fireball] run fill ~2 ~2 ~2 ~-2 ~-2 ~-2 air replace water
-execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 fire keep
-execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 fire replace #buttons
-execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 fire replace grass
-execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 fire replace #inside_step_sound_blocks
-execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..3,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!text_display] if entity @s[type=!area_effect_cloud] run function cmd:reactions/radiation
-execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..3,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!text_display] if entity @s[type=!area_effect_cloud] run function cmd:reactions/burning
+#execute at @e[type=dragon_fireball] run particle minecraft:dust 1 0.6 0 1000 ~ ~ ~ 1 1 1 0.1 10
+#execute at @e[type=dragon_fireball] run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 fire keep
+#execute at @e[type=dragon_fireball] run fill ~2 ~2 ~2 ~-2 ~-2 ~-2 air replace water
+#execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 fire keep
+#execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 fire replace #buttons
+#execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 fire replace grass
+#execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 fire replace #inside_step_sound_blocks
+#execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..3,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!text_display] if entity @s[type=!area_effect_cloud] run function cmd:reactions/radiation
+#execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..3,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!text_display] if entity @s[type=!area_effect_cloud] run function cmd:reactions/burning
 
-execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 fire replace water
-execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}}] run damage @s 10 magic by @p
-execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run kill @s
+#execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 fire replace water
+#execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}}] run damage @s 10 magic by @p
+#execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run kill @s
 
 
 # ## ICE BREATH
-# execute at @e[type=dragon_fireball] run execute as @e[distance=..6,nbt=!{RootVehicle:{}}] run scoreboard players set @s currentStatus 107
+execute at @e[type=dragon_fireball] run execute as @e[distance=..6,nbt=!{RootVehicle:{}}] run scoreboard players set @s currentStatus 107
 
-# execute at @e[type=dragon_fireball] run execute as @e[distance=..6,nbt=!{RootVehicle:{}}] run damage @s[type=!ender_dragon] 10 magic by @p
-# execute at @e[type=dragon_fireball] run execute as @e[distance=..6,nbt=!{RootVehicle:{}}] run effect give @s slowness 6 2 true
+execute at @e[type=dragon_fireball] run execute as @e[distance=..6,nbt=!{RootVehicle:{}}] run damage @s[type=!ender_dragon] 10 magic by @p
+execute at @e[type=dragon_fireball] run execute as @e[distance=..6,nbt=!{RootVehicle:{}}] run effect give @s slowness 6 2 true
 
-# execute at @e[type=dragon_fireball] run particle minecraft:dust 0 0.75 1 1000 ~ ~ ~ 1 1 1 0.1 10
-# execute at @e[type=dragon_fireball] run fill ~2 ~2 ~2 ~-2 ~-2 ~-2 ice replace water
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 blue_ice replace #mineable/pickaxe
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 ice replace water
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 packed_ice replace #mineable/shovel
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 packed_ice replace #mineable/axe
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 ice replace #mineable/hoe
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!area_effect_cloud] if entity @s[type=!text_display] run scoreboard players set @s currentStatus 107
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!area_effect_cloud] if entity @s[type=!text_display] run function cmd:reactions/crisp
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!area_effect_cloud] if entity @s[type=!text_display] run function cmd:reactions/superconduct
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!area_effect_cloud] if entity @s[type=!text_display] run function cmd:reactions/freeze
+execute at @e[type=dragon_fireball] run particle minecraft:dust 0 0.75 1 1000 ~ ~ ~ 1 1 1 0.1 10
+execute at @e[type=dragon_fireball] run fill ~2 ~2 ~2 ~-2 ~-2 ~-2 ice replace water
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 blue_ice replace #mineable/pickaxe
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 ice replace water
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 packed_ice replace #mineable/shovel
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 packed_ice replace #mineable/axe
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run fill ~3 ~2 ~3 ~-3 ~-2 ~-3 ice replace #mineable/hoe
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!area_effect_cloud] if entity @s[type=!text_display] run scoreboard players set @s currentStatus 107
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!area_effect_cloud] if entity @s[type=!text_display] run function cmd:reactions/crisp
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!area_effect_cloud] if entity @s[type=!text_display] run function cmd:reactions/superconduct
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!area_effect_cloud] if entity @s[type=!text_display] run function cmd:reactions/freeze
 # execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!area_effect_cloud] if entity @s[type=!text_display] run scoreboard players set @s noAITime 600
 # execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] if entity @s[type=!ender_dragon] if entity @s[type=!dragon_fireball] if entity @s[type=!area_effect_cloud] if entity @s[type=!text_display] run scoreboard players set @s[tag=!important] noAITime 6000
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] run tellraw @s {"text": "Debuff: Freeze: 30s (By an Ice Dragon)","color": "red","bold": true}
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}}] run damage @s 10 magic by @p
-# execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run kill @s
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}},type=!armor_stand] run tellraw @s {"text": "Debuff: Freeze: 30s (By an Ice Dragon)","color": "red","bold": true}
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run execute as @e[distance=..6,nbt=!{RootVehicle:{}}] run damage @s 10 magic by @p
+execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] at @s run kill @s
 
 # ## ICE BREATH
 

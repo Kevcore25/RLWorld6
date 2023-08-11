@@ -204,7 +204,6 @@ scoreboard players set @s challenges 0
 
 
 
-
 # skills
 scoreboard players enable @s skills
 execute if entity @s[scores={skills=0..}] at @s run function cmd:skills
@@ -383,3 +382,4 @@ execute at @s unless block ~ ~-1 ~ air run scoreboard players set @s falldmgmlg 
 execute at @s if block ~ ~-1 ~ air if block ~-1 ~-1 ~ air if block ~1 ~-1 ~ air if block ~ ~-1 ~1 air if block ~-1 ~-1 ~-1 air run scoreboard players add @s falldmgmlg 1
 
 clear @s slime_ball
+effect clear @s water_breathing

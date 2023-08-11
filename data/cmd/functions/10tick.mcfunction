@@ -11,6 +11,7 @@ enchant @a[scores={axesLvl=7..},nbt={SelectedItem:{id:"minecraft:diamond_axe"}}]
 enchant @a[scores={axesLvl=7..},nbt={SelectedItem:{id:"minecraft:netherite_axe"}}] sharpness 1
 
 
+
 execute as @a[tag=!spectating] if entity @s run execute store result score @s xpos run data get entity @s Pos[0]
 execute as @a[tag=!spectating] if entity @s run execute store result score @s ypos run data get entity @s Pos[1]
 execute as @a[tag=!spectating] if entity @s run execute store result score @s zpos run data get entity @s Pos[2]
@@ -91,11 +92,20 @@ execute at @a[tag=!spectating] as @e[distance=..24] at @s if block ~ ~-1 ~ #beac
 execute at @a[tag=!spectating] as @e[distance=..24] at @s if block ~ ~ ~ #piglin_repellents run effect give @s conduit_power 12 0 true
 execute as @e[type=!player,nbt=!{Fire:-1s}] run effect give @s[nbt=!{Fire:0s},type=!armor_stand] hero_of_the_village 4 1 true
 
-execute as @a[scores={shields=1..}] unless entity @s[scores={superconduct=1..}] run effect give @s resistance 1 4
+execute as @a[scores={shields=1..}] unless entity @s[scores={superconduct=1..}] positioned 1000 200 1000 unless entity @s[distance=..30] run effect give @s resistance 1 4
+execute as @a[scores={shields=1..}] unless entity @s[scores={superconduct=1..}] positioned 1000 200 1000 if entity @s[distance=..30] run effect give @s resistance 1 3
 execute as @a[scores={shields=1..,superconduct=1..}] run effect give @s resistance 1 2
 
 execute as @e[type=item,nbt={Item:{id:"minecraft:nether_star",tag:{ReactantCore:1}}}] at @s run function cmd:reactantcore
 execute as @e[type=item,nbt={Item:{id:"minecraft:heart_of_the_sea",tag:{TransmuteCore:1}}}] at @s run function cmd:transmutationcore
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:gunpowder",tag:{RelicEnhancer:1}}}] at @s as @e[type=item,distance=..0.3,limit=1,sort=nearest,nbt={Item:{tag:{Relic:1}}}] run function cmd:addrelicstat
+execute as @e[type=item,nbt={Item:{id:"minecraft:gunpowder",tag:{RelicEnhancer:1}}}] at @s if entity @e[type=item,distance=..0.3,limit=1,sort=nearest,nbt={Item:{tag:{Relic:1}}}] run kill @s
+
+
+#/give @p gunpowder{RelicEnhancer:1,display:{Name:'[{"text":"Relic Enhancer","italic":false,"color":"gold","bold":true}]',Lore:['[{"text":"When thrown together with a relic, the relic","italic":false,"color":"gray"}]','[{"text":"receives 1 random stat.","italic":false,"color":"gray"}]','[{"text":"If the relic already has more than 4 of the random","italic":false,"color":"gray"}]','[{"text":"stat, the relic gains +1 SP Regeneration","italic":false,"color":"gray"}]']},Enchantments:[{id:power,lvl:1}],HideFlags:1} 1
+
+
 effect give @e[type=blaze] hero_of_the_village 10 1 true
 effect give @e[type=enderman] slowness 10 0 true
 effect give @e[type=stray] slowness 10 0 true

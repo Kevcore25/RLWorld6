@@ -47,6 +47,13 @@ execute at @s[type=!armor_stand] if entity @s[type=!text_display] if entity @s[t
 tag @s remove no
 # DMG
 
+## EVENT
+scoreboard players operation @p e-dmg += @s dps
+
+
+scoreboard players set @s[type=player] physicalDMG 0
+damage @s[type=player] 5 out_of_world
+
 damage @s[scores={physicalDMG=40}] 4.0 player_attack
 damage @s[scores={physicalDMG=41}] 4.1 player_attack
 damage @s[scores={physicalDMG=42}] 4.2 player_attack

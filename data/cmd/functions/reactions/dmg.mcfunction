@@ -55,6 +55,8 @@ execute if entity @s[tag=!yellowcrit,tag=!orangecrit,tag=!redcrit] run summon te
 
 tag @s remove no
 
+## EVENT
+scoreboard players operation @p e-dmg += @s dps
 
 # DMG
 damage @s[scores={reactionDMG=1}] 0.1 player_attack

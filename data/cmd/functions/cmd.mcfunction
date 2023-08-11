@@ -50,8 +50,8 @@ execute as @e[type=area_effect_cloud,nbt={Particle:"minecraft:dragon_breath"}] a
 # execute as @a[tag=!spectating] if entity @s[nbt={SelectedItem:{tag:{Peach:1}}},scores={Walk=0,Run=0}] at @s positioned ~ ~0.2 ~ run tp @e[type=villager,tag=RMBdetection,distance=0..] ^ ^ ^
 # execute as @a[tag=!spectating] if entity @s[nbt={SelectedItem:{tag:{Peach:1}}},scores={Jump=1..,Run=1..}] at @s positioned ~ ~1 ~ run tp @e[type=villager,tag=RMBdetection,distance=0..] ^ ^ ^2
 #execute as @a[tag=!spectating] if entity @s[nbt={SelectedItem:{tag:{Peach:1}}}] at @s positioned ~ ~0.2 ~ run data modify entity @e[type=villager,tag=RMBdetection,limit=1] Pos set from entity @s Pos
-execute as @e[type=tnt,nbt={Fuse:1s}] at @s run summon creeper ~ ~ ~ {ExplosionRadius:15,Fuse:0,CustomName:'[{"text":"TNT Explosion"}]'}
-execute as @e[type=tnt,nbt={Fuse:1s}] at @s run kill @s
+execute as @e[type=tnt,nbt={Fuse:1s},tag=!noreplaceentity] at @s run summon creeper ~ ~ ~ {ExplosionRadius:15,Fuse:0,CustomName:'[{"text":"TNT Explosion"}]'}
+execute as @e[type=tnt,nbt={Fuse:1s},tag=!noreplaceentity] at @s run kill @s
 
 # execute as @a[tag=!spectating] if entity @s[scores={useVill=1..},nbt={SelectedItem:{tag:{Peach:1}}}] run scoreboard players add @s placeHead 1
 # execute as @a[tag=!spectating] if entity @s[scores={useVill=1..},nbt={SelectedItem:{tag:{Peach:1}}}] run clear @s[gamemode=!creative] player_head{Peach:1} 1
@@ -100,6 +100,7 @@ execute at @e[tag=whirlwind] run particle dust 1 1 1 10 ~ ~ ~ 1 1 1 0 3
 #  execute at @e[tag=whirlwind] run damage @e[type=!item,distance=..2,limit=1,sort=random] 2 cramming
 
 execute at @e[tag=whirlwind] as @e[distance=..8] run data merge entity @s {NoGravity:1b}
+execute at @e[tag=whirlwind] as @e[distance=..1.5,type=!player] run function cmd:reactions/whirl
 #execute at @e[tag=whirlwind] as @a[distance=..30] at @s facing entity @e[limit=1,sort=nearest,tag=whirlwind] feet run tp @s[tag=!whirlwind] ^ ^ ^0.01
 #execute at @e[tag=whirlwind] as @a[distance=..10] run effect give @s slow_falling 1 0
 # execute at @e[tag=whirlwind] as @e[type=!player,distance=15..20] at @s facing entity @e[limit=1,sort=nearest,tag=whirlwind] feet run tp @s[tag=!whirlwind] ^ ^ ^0.05
@@ -118,7 +119,7 @@ execute at @e[tag=whirlwind] as @e[type=!player,distance=..8] at @s facing entit
 
 
 scoreboard players add @e[tag=whirlwind] timeInSec 1
-kill @e[tag=whirlwind,scores={timeInSec=1200..}]
+kill @e[tag=whirlwind,scores={timeInSec=100..}]
 
 # execute as @a[scores={dodgeCD=3}] at @s run effect clear @s resistance
 # execute as @a[scores={dodgeCD=3}] at @s run effect clear @s slowness
@@ -162,3 +163,4 @@ execute positioned 1000 200 1000 if entity @a[distance=..36] run execute as @e[d
 
 
 execute positioned 1000 200 1000 if entity @a[distance=..36] run kill @e[type=item,nbt={Item:{id:"minecraft:totem_of_undying"}},distance=..50]
+execute positioned 1000 200 1000 if entity @a[distance=..36] run kill @e[type=potion,distance=..50]

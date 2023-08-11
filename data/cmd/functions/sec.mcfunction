@@ -391,17 +391,15 @@ effect give @e[type=phantom] strength 1000 49 true
 execute positioned 0 -500 0 run kill @e[distance=..50]
 execute in the_nether positioned 0 -500 0 run kill @e[distance=..50]
 
-
-scoreboard players add @a combatLvl 0
-scoreboard players add @a axesLvl 0
-scoreboard players add @a pickaxesLvl 0
-scoreboard players add @a gatheringLvl 0
+item replace entity @e[type=minecraft:pillager,tag=freezePillager] weapon.offhand with tipped_arrow{ReactionArrow:1,CustomPotionColor:36095,display:{Name:'[{"text":"Radiation Arrow","italic":false,"color":"aqua"}]'},HideFlags:32,CustomPotionEffects:[{Id:2,Duration:10},{Id:27,Duration:10}]} 1
 
 
 scoreboard players set @a[tag=easyMode,scores={combatLvl=0}] combatLvl 6
 scoreboard players set @a[tag=easyMode,scores={axesLvl=0}] axesLvl 6
 scoreboard players set @a[tag=easyMode,scores={pickaxesLvl=0}] pickaxesLvl 6
 scoreboard players set @a[tag=easyMode,scores={gatheringLvl=0}] gatheringLvl 6
+scoreboard players set @a[tag=easyMode,scores={firstaidLvl=0}] gatheringLvl 6
+scoreboard players set @a[tag=easyMode,scores={defenseLvl=0}] gatheringLvl 6
 
 
 ## FIGURE out how to add stats
@@ -485,3 +483,21 @@ execute at @a run fill ~8 ~8 ~8 ~-8 ~-8 ~-8 stone_button[face=floor,powered=fals
 execute at @a run fill ~5 ~5 ~5 ~-5 ~-5 ~-5 air replace enchanting_table
 
 scoreboard players remove @a[scores={staminafullness=1..}] staminafullness 1
+
+## EVENT
+execute as @a[scores={e-goldores=30..},tag=!e-goldores] run tellraw @s {"text": "Completed challenge: Mine 30 Gold ores\nReward: +2 Relic Enhancers","color": "green"}
+execute as @a[scores={e-goldores=30..},tag=!e-goldores] run give @s gunpowder{RelicEnhancer:1,display:{Name:'[{"text":"Relic Enhancer","italic":false,"color":"gold","bold":true}]',Lore:['[{"text":"When thrown together with a relic, the relic","italic":false,"color":"gray"}]','[{"text":"receives 1 random stat.","italic":false,"color":"gray"}]','[{"text":"If the relic already has more than 4 of the random","italic":false,"color":"gray"}]','[{"text":"stat, the relic gains +1 SP Regeneration","italic":false,"color":"gray"}]']},Enchantments:[{id:"minecraft:power",lvl:1}],HideFlags:1} 2
+execute as @a[scores={e-goldores=30..},tag=!e-goldores] run tag @s add e-goldores
+
+execute as @a[scores={e-stone=640..},tag=!e-stone] run tellraw @s {"text": "Completed challenge: Mine 640 stone\nReward: +2 Relic Enhancers","color": "green"}
+execute as @a[scores={e-stone=640..},tag=!e-stone] run give @s gunpowder{RelicEnhancer:1,display:{Name:'[{"text":"Relic Enhancer","italic":false,"color":"gold","bold":true}]',Lore:['[{"text":"When thrown together with a relic, the relic","italic":false,"color":"gray"}]','[{"text":"receives 1 random stat.","italic":false,"color":"gray"}]','[{"text":"If the relic already has more than 4 of the random","italic":false,"color":"gray"}]','[{"text":"stat, the relic gains +1 SP Regeneration","italic":false,"color":"gray"}]']},Enchantments:[{id:"minecraft:power",lvl:1}],HideFlags:1} 2
+execute as @a[scores={e-stone=640..},tag=!e-stone] run tag @s add e-stone
+
+
+execute as @a[scores={e-reactantcore=1},tag=!e-rc] run tellraw @s {"text": "Completed challenge: Use a reactant core\nReward: +2 Relic Enhancers","color": "green"}
+execute as @a[scores={e-reactantcore=1},tag=!e-rc] run give @s gunpowder{RelicEnhancer:1,display:{Name:'[{"text":"Relic Enhancer","italic":false,"color":"gold","bold":true}]',Lore:['[{"text":"When thrown together with a relic, the relic","italic":false,"color":"gray"}]','[{"text":"receives 1 random stat.","italic":false,"color":"gray"}]','[{"text":"If the relic already has more than 4 of the random","italic":false,"color":"gray"}]','[{"text":"stat, the relic gains +1 SP Regeneration","italic":false,"color":"gray"}]']},Enchantments:[{id:"minecraft:power",lvl:1}],HideFlags:1} 2
+execute as @a[scores={e-reactantcore=1},tag=!e-rc] run tag @s add e-rc
+
+execute as @a[scores={e-dmg=50000..},tag=!e-dmg] run tellraw @s {"text": "Completed challenge: Deal over 50K DMG from physical damage or reactions\nReward: +2 Relic Enhancers","color": "green"}
+execute as @a[scores={e-dmg=50000..},tag=!e-dmg] run trigger type set 258025800
+execute as @a[scores={e-dmg=50000..},tag=!e-dmg] run tag @s add e-dmg

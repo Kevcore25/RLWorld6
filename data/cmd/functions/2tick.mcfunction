@@ -2,6 +2,9 @@
 schedule function cmd:2tick 2t replace
 # tellraw @a[tag=debuger] {"text":"2tick.mcfunction ran","color":"gray"}
 
+
+scoreboard players set @a currentStatus 0
+
 # ice bloom
 execute at @a[tag=!spectating] as @e[type=slime,tag=natureCore,distance=..7] at @s run effect give @s bad_omen 1 0 true
 execute as @e[type=slime,tag=natureCore,nbt={ActiveEffects:[{Id:2}]}] at @s run function cmd:explodecore
@@ -22,7 +25,6 @@ execute as @e[tag=active] run function cmd:elements2
 
 # NOTICE: Uncomment the line below to enable status ID reset within active range of players. This may cause more lag!
 # execute at @a[tag=!spectating] run scoreboard players set @e[tag=active] currentStatus 0
-scoreboard players set @a currentStatus 0
 
 
 
@@ -85,7 +87,7 @@ execute as @a at @s if block ~ ~ ~ water run effect give @s unluck 6 0 true
 execute as @a[nbt={ActiveEffects:[{Id:2}]}] at @s[nbt={ActiveEffects:[{Id:27}]}] run function cmd:reactions/freeze
 
 
-execute at @a positioned ~ ~1.5 ~ if entity @e[type=item,distance=..0.3] run damage @p 3 fall
+execute at @a positioned ~ ~2.5 ~ if entity @e[type=item,distance=..0.3] run damage @p 3 fall
 
 # execute at @a if entity @e[type=item,distance=..0.5,tag=!tripped] run damage @p 3 fall
 # execute at @a if entity @e[type=item,distance=..0.5,tag=!tripped] run tag @e[type=item,distance=..0.5,tag=!tripped] add tripped

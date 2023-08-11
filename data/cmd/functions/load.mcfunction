@@ -362,3 +362,6 @@ scoreboard objectives add falldmgmlg dummy
 
 
 scoreboard objectives add staminafullness dummy
+
+scoreboard objectives add firstaidLvl dummy "First Aid SL"
+scoreboard objectives add firstaidLvlC dummy "First Aid SLC"

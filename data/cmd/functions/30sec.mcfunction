@@ -8,6 +8,7 @@ execute as @a[scores={thirst=..-1}] run scoreboard players set @s thirst 0
 
 scoreboard players add @a peachLimit 0
 
+execute at @a if biome ~ ~ ~ #is_forest run playsound minecraft:entity.parrot.ambient ambient @a ~ ~ ~ 1 1.5
 
 execute at @e[type=phantom,tag=stormofwater] run summon drowned
 execute at @e[type=phantom,tag=stormofwater] run summon drowned

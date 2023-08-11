@@ -76,6 +76,10 @@ execute as @a[tag=!spectating] if entity @s[tag=!sldrequired,nbt={Inventory:[{Sl
 execute as @a[tag=!spectating] if entity @s[tag=!sldrequired,nbt={Inventory:[{Slot:101b,tag:{ARhp:1}}]}] run scoreboard players add @s ARhp 1
 execute as @a[tag=!spectating] if entity @s[tag=!sldrequired,nbt={Inventory:[{Slot:100b,tag:{ARhp:1}}]}] run scoreboard players add @s ARhp 1
 
+
+execute as @a[tag=!spectating] if entity @s[scores={firstaidLvl=5..}] run scoreboard players add @s ARhp 1
+execute as @a[tag=!spectating] if entity @s[scores={firstaidLvl=10..}] run scoreboard players add @s ARhp 1
+
 # Relics
 execute as @a[nbt={Inventory:[{tag:{REShp:1}}]}] run function cmd:calcrelics/hp
 

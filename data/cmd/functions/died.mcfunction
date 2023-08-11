@@ -67,6 +67,9 @@ execute as @s[tag=PR-up] run forceload remove ~ ~
 execute as @s[tag=PR-up] if entity @s[scores={myrandom=0..3},nbt={Inventory:[{tag:{Volunteerer:1}}]}] in overworld run tp @s 88.66 54.00 95.98
 execute as @s[tag=PR-up] unless entity @s[scores={myrandom=0..3},nbt={Inventory:[{tag:{Volunteerer:1}}]}] in overworld run spreadplayers 0 0 50 100 false @s
 execute as @s[tag=PR-up] run tag @s add PR-done
+execute as @s[tag=PR-up] run gamemode survival
+execute as @s[tag=PR-up] run function cmd:diedhp
+
 
 # Respawning commands
 execute as @s[tag=PR-done] run gamemode survival

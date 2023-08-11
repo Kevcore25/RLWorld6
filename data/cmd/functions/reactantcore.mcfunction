@@ -40,3 +40,6 @@ execute if entity @e[type=item,nbt={Item:{id:"minecraft:tipped_arrow",tag:{Natur
 # CRISP
 execute if entity @e[type=item,nbt={Item:{id:"minecraft:tipped_arrow",tag:{NatureArrow:1}}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:tipped_arrow",tag:{IceArrow:1}}},distance=..0.5] run data merge entity @s {Item:{Count:5b,id:"minecraft:tipped_arrow",tag:{ReactionArrow:1,CustomPotionColor:32614,display:{Name:'[{"text":"Crisp Arrow","italic":false,"color":"aqua"}]',Lore:['[{"text":"Crafted by Reactant Core","italic":false,"color":"gray"}]']},HideFlags:32,CustomPotionEffects:[{Id:31,Duration:10},{Id:2,Duration:10}]}}}
 execute if entity @e[type=item,nbt={Item:{id:"minecraft:tipped_arrow",tag:{NatureArrow:1}}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:tipped_arrow",tag:{IceArrow:1}}},distance=..0.5] as @e[type=item,nbt={Item:{id:"minecraft:tipped_arrow"}}] run kill @e[nbt=!{Item:{tag:{ReactionArrow:1}}},distance=..0.5]
+
+## EVENT
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:tipped_arrow"}},distance=..0.5] if entity @e[type=item,nbt={Item:{id:"minecraft:tipped_arrow"}},distance=..0.5] as @e[type=item,nbt={Item:{id:"minecraft:tipped_arrow"}}] run scoreboard players set @p e-reactantcore 1

@@ -15,6 +15,15 @@ execute as @a run scoreboard players operation @s osbarchange = @s rank.
 time add 1t
 tag @a remove slrequired
 tag @a remove sldrequired
+
+execute at @a if biome ~ ~ ~ #is_forest run playsound minecraft:entity.parrot.ambient ambient @a ~ ~ ~ 1 2
+scoreboard players add @a combatLvl 0
+scoreboard players add @a axesLvl 0
+scoreboard players add @a pickaxesLvl 0
+scoreboard players add @a gatheringLvl 0
+scoreboard players add @a firstaidLvl 0
+
+
 # execute at @e[type=ender_dragon,tag=!CustomPetDragon] run summon tnt ~ ~ ~5 {Fuse:100}
 # execute at @e[type=ender_dragon,tag=!CustomPetDragon] run summon tnt ~ ~ ~-5 {Fuse:100}
 # execute at @e[type=ender_dragon,tag=!CustomPetDragon] run summon tnt ~5 ~ ~ {Fuse:100}
@@ -97,6 +106,7 @@ kill @e[type=minecraft:dragon_fireball]
 
 execute as @e[type=phantom] run effect give @s instant_damage 1 0
 
+execute as @a[scores={firstaidLvl=8..,thirst=16..}] run effect give @s regeneration 1 2
 
 # KCLagRemoval
 #kill @e[type=item,nbt={Item:{id:"minecraft:raw_gold_block"}}]
@@ -107,7 +117,7 @@ scoreboard players add @a shields 0
 execute at @a if entity @e[type=boat,distance=..2] run tellraw @p {"text": "Your boat broke!","color": "red"}
 execute at @a if entity @e[type=boat,distance=..2] run give @p oak_slab 3
 execute at @a if entity @e[type=boat,distance=..2] run give @p stick 3
-execute at @a if entity @e[type=boat,distance=..2] run damage @p 10 cactus
+execute at @a if entity @e[type=boat,distance=..2] run damage @p 20 cactus
 
 kill @e[type=boat]
 

@@ -97,9 +97,8 @@ execute if entity @s[nbt={SelectedItem:{tag:{FireAspect:1}}},scores={ultCD=..0,S
 execute if entity @s[nbt={SelectedItem:{tag:{FireAspect:1}}},scores={ultCD=..0,Sneak=1..}] as @e[type=!player,tag=!player,distance=..4,scores={burning=1..}] run damage @s 10 generic by @p
 execute if entity @s[nbt={SelectedItem:{tag:{FireAspect:1}}},scores={ultCD=..0,Sneak=1..}] run tellraw @s [{"text": "Activated Ultimate: ","color": "green"},{"text": "Hot as the sun","color": "gold"}]
 # # WINDD
-execute if entity @s[nbt={SelectedItem:{tag:{WindAspect:1}}},scores={ultCD=..0,Sneak=1..}] run tp @e[type=!player,distance=..10] ^ ^ ^1.5
-execute if entity @s[nbt={SelectedItem:{tag:{WindAspect:1}}},scores={ultCD=..0,Sneak=1..}] run scoreboard players remove @s ultCD 100
-execute if entity @s[nbt={SelectedItem:{tag:{WindAspect:1}}},scores={ultCD=..0,Sneak=1..}] run tellraw @s [{"text": "Activated Ultimate: ","color": "green"},{"text": "Vacuum","color": "gold"}]
+execute if entity @s[nbt={SelectedItem:{tag:{WindAspect:1}}},scores={ultCD=..0,Sneak=1..}] run summon marker ~ ~1 ~ {Tags:["whirlwind"], CustomName:'"Whirlwind"'}
+execute if entity @s[nbt={SelectedItem:{tag:{WindAspect:1}}},scores={ultCD=..0,Sneak=1..}] run tellraw @s [{"text": "Activated Ultimate: ","color": "green"},{"text": "Whirlwind","color": "gold"}]
 
 
 # # STONE
@@ -124,8 +123,9 @@ execute if entity @s[nbt={SelectedItem:{tag:{ER:2}}}] run tellraw @s {"text": "+
 execute if entity @s[nbt={SelectedItem:{tag:{ER:2}}}] run clear @s popped_chorus_fruit{ER:2} 1
 
 # FOOD UPDATE
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:glistering_melon_slice"}}] run effect give @s regeneration 2 2
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:glistering_melon_slice"}}] run clear @s glistering_melon_slice 1
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:glistering_melon_slice"}},scores={firstaidLvl=5..}] run effect give @s regeneration 2 2
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:glistering_melon_slice"}},scores={firstaidLvl=5..}] run clear @s glistering_melon_slice 1
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:glistering_melon_slice"}},scores={firstaidLvl=..4}] run tellraw @s {"text": "You require a First Aid skill level of 5 to receive healing for this item!","color": "red"}
 
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:melon_slice"}}] run scoreboard players add @s thirst 3
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:melon_slice"}}] run clear @s melon_slice 1
@@ -138,3 +138,7 @@ execute if entity @s[nbt={SelectedItem:{id:"minecraft:glowstone_dust"}}] run eff
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:glowstone_dust"}}] run clear @s glowstone_dust 1
 
 execute if entity @s[nbt={SelectedItem:{tag:{Peach:1}}}] run function cmd:peach
+
+# o2 bottle
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:glass_bottle"}},scores={myrandom=0}] run playsound item.bottle.fill_dragonbreath player @a
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:glass_bottle"}},scores={myrandom=0}] run item replace entity @s weapon.mainhand with potion{O2Bottle:1,CustomPotionColor:13172735,display:{Name:'[{"text":"Oxygen Bottle","italic":false}]',Lore:['[{"text":"Restores 30 Oxygen when used","italic":false,"color":"gray"}]']},HideFlags:32,CustomPotionEffects:[{Id:13,Duration:10,ShowParticles:0b,ShowIcon:0b}]} 1
